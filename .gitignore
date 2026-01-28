@@ -1,6 +1,8 @@
 # For the python venv
 .venv
-
+#for code editors
+.vscode
+.vsconfig
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
