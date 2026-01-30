@@ -1,0 +1,40 @@
+using System;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class speedometer : MonoBehaviour
+{
+    public UIDocument document;
+    //max speed is what is shown when needle is at max
+    const float max_speed = 100;
+
+    private float max_angle = 89;
+    private float min_angle = -89;
+
+    [Range(0, max_speed)] public float current_speed = 50;
+    VisualElement needle;
+    Label speed_text;
+
+    void OnEnable()
+    {
+
+        var root = document.rootVisualElement;
+        needle = root.Q<VisualElement>("needle");
+        speed_text = root.Q<Label>("speedometer_text");
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        update_needle();
+        speed_text.text = current_speed.ToString("F1");
+    }
+    private void update_needle()
+    {
+        //center the value of needle_pos around 0
+        float needle_pos = current_speed / max_speed;
+        needle_pos = Mathf.Lerp(min_angle, max_angle, needle_pos);
+        this.needle.style.rotate = new Rotate(new Angle(needle_pos, AngleUnit.Degree));
+    }
+}
