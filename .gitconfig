@@ -1,0 +1,8 @@
+    [merge]
+    tool = unityyamlmerge
+#NOTE: you must add the unity tools folder to your path
+#it is typically "C:\Program Files\Unity\Hub\Editor\<EDITOR_VERSION_NUMBER>\Editor\Data\Tools\"
+
+    [mergetool "unityyamlmerge"]
+    trustExitCode = false
+    cmd = 'unityyamlmerge merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"'
