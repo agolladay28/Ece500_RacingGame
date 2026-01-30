@@ -5,4 +5,4 @@
 
     [mergetool "unityyamlmerge"]
     trustExitCode = false
-    cmd = 'unityyamlmerge merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"'
+    cmd = unityyamlmerge merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
