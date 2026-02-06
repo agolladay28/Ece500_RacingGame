@@ -189,6 +189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  he: 0
+  he2: 0
+  forward_key: 0
+  reverse_key: 0
+  left_key: 0
+  right_key: 0
+  handbrake_key: 0
   maxSpeed: 120
   maxReverseSpeed: 45
   accelerationMultiplier: 5
