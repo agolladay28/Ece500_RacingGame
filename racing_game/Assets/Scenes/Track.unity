@@ -4597,8 +4597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::speedometer
   document: {fileID: 1615680701}
-  player_visual_element_query: left_player
-  body_to_measure: {fileID: 1824412453}
+  player_visual_element_query: right_player
+  body_to_measure: {fileID: 1672852453}
   SPEED_SCALING: 6
   current_speed: 50
 --- !u!114 &1615680700
@@ -4613,10 +4613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af06edf898052146b4ff273ceaceef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::speedometer
-  document: {fileID: 0}
+  document: {fileID: 1615680701}
   player_visual_element_query: left_player
-  body_to_measure: {fileID: 0}
-  SPEED_SCALING: 0
+  body_to_measure: {fileID: 1824412453}
+  SPEED_SCALING: 6
   current_speed: 50
 --- !u!114 &1615680701
 MonoBehaviour:
@@ -4658,6 +4658,7 @@ MonoBehaviour:
   current_lap: 2
   current_lap_time_sec: 59.988
   player_visual_element_query: right_player
+  debug_lap_trigger: 0
 --- !u!114 &1615680703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4675,6 +4676,7 @@ MonoBehaviour:
   current_lap: 1
   current_lap_time_sec: 59.988
   player_visual_element_query: left_player
+  debug_lap_trigger: 0
 --- !u!1 &1645127743
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,6 +4803,11 @@ MonoBehaviour:
 --- !u!4 &1672852452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5440500943033275275, guid: 5959cf9655e81c44ca786e9db744eac5, type: 3}
+  m_PrefabInstance: {fileID: 276648536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1672852453 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1255164014313798424, guid: 5959cf9655e81c44ca786e9db744eac5, type: 3}
   m_PrefabInstance: {fileID: 276648536}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1708912980
