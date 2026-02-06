@@ -287,7 +287,7 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.35
+  m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Cinemachine::Cinemachine.Cinemachine3rdPersonFollow
-  Damping: {x: 0.5, y: 0.5, z: 0.5}
+  Damping: {x: 2, y: 0.5, z: 0.5}
   ShoulderOffset: {x: 0, y: 4, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 0.5
@@ -671,7 +671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3729352846035387631}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.39732295, y: 0.38789666, z: -0.1903691, w: 0.80958647}
+  m_LocalRotation: {x: 0.22540592, y: 0, z: 0, w: 0.974265}
   m_LocalPosition: {x: 0, y: 4.4, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
