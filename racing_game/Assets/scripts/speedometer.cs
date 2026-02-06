@@ -11,18 +11,20 @@ public class speedometer : MonoBehaviour
 
     private float max_angle = 89;
     private float min_angle = -89;
-    [SerializeField] private float SPEED_SCALING;
 
+    [SerializeField] private string player_visual_element_query = "left_player";
+    public Rigidbody body_to_measure;
+    [SerializeField] private float SPEED_SCALING;
     [Range(0, max_speed)] public float current_speed = 50;
     VisualElement needle;
     Label speed_text;
-    public Rigidbody body_to_measure;
     void OnEnable()
     {
 
-        var root = document.rootVisualElement;
-        needle = root.Q<VisualElement>("needle");
-        speed_text = root.Q<Label>("speedometer_text");
+        var doc_root = document.rootVisualElement;
+        var player_root = doc_root.Q<VisualElement>(player_visual_element_query);
+        needle = player_root.Q<VisualElement>("needle");
+        speed_text = player_root.Q<Label>("speedometer_text");
     }
 
 

@@ -9,16 +9,17 @@ public class race_info : MonoBehaviour
     public float total_laps = 3;
     public float current_lap = 1;
     public float current_lap_time_sec = 59.988f;
-
+    [SerializeField] private string player_visual_element_query = "left_player";
     Label lap_text;
     Label time_text;
 
     void OnEnable()
     {
 
-        var root = document.rootVisualElement;
-        lap_text = root.Q<Label>("lap_count");
-        time_text = root.Q<Label>("lap_time");
+        var doc_root = document.rootVisualElement;
+        var player_root = doc_root.Q<VisualElement>(player_visual_element_query);
+        lap_text = player_root.Q<Label>("lap_count");
+        time_text = player_root.Q<Label>("lap_time");
     }
 
 
