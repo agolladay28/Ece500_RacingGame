@@ -2614,6 +2614,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697492604}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &774634339 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7272779467015715761, guid: ba47faeff8f772040bebdc997059cd90, type: 3}
+  m_PrefabInstance: {fileID: 1421387188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,7 +3413,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   document: {fileID: 1137772255}
+  SPEED_SCALING: 6
   current_speed: 54.1
+  body_to_measure: {fileID: 774634339}
 --- !u!114 &1137772258
 MonoBehaviour:
   m_ObjectHideFlags: 0

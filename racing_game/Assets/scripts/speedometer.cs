@@ -10,11 +10,12 @@ public class speedometer : MonoBehaviour
 
     private float max_angle = 89;
     private float min_angle = -89;
+    [SerializeField] private float SPEED_SCALING;
 
     [Range(0, max_speed)] public float current_speed = 50;
     VisualElement needle;
     Label speed_text;
-
+    public Rigidbody body_to_measure;
     void OnEnable()
     {
 
@@ -27,8 +28,13 @@ public class speedometer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        update_speed();
         update_needle();
         speed_text.text = current_speed.ToString("F1");
+    }
+    private void update_speed()
+    {
+        current_speed = body_to_measure.linearVelocity.magnitude * SPEED_SCALING;
     }
     private void update_needle()
     {
