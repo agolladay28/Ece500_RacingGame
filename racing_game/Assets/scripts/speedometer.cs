@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class speedometer : MonoBehaviour
 {
     public UIDocument document;
+    public VisualElement spedometer_root;
     //max speed is what is shown when needle is at max
     const float max_speed = 100;
 
