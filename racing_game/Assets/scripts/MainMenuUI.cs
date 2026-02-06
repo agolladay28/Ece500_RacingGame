@@ -8,15 +8,17 @@ public class MainMenuUI : MonoBehaviour
     public string sceneName;
 
     // This function can be hooked to UI Buttons
-    public void LoadScene()
+    void Update()
     {
-        if (string.IsNullOrEmpty(sceneName))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.LogWarning("Scene name is empty! Please assign a scene in the Inspector.");
-            return;
-        }
+            string current = SceneManager.GetActiveScene().name;
 
-        Debug.Log("Switching to scene: " + sceneName);
-        SceneManager.LoadScene(sceneName);
+            if (current == "Start Page")
+                SceneManager.LoadScene("Control");
+
+            else if (current == "Control")
+                SceneManager.LoadScene("Track");
+        }
     }
 }
