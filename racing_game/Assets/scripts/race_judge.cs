@@ -46,16 +46,16 @@ public class race_judge : MonoBehaviour
         {
             Time.timeScale = 0;
             declare_winner();
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeyCode.Return))
             {
-                reset_scene();
+                return_to_main_menu();
             }
         }
     }
-    private void reset_scene()
+    private void return_to_main_menu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Start Page");
 
     }
     private void update_car(race_info info, int checkpoint_number)
