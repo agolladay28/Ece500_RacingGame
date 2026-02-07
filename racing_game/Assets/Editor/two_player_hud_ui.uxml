@@ -1,25 +1,25 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="root" style="flex-grow: 1; flex-direction: row;">
+    <ui:VisualElement name="root" style="flex-grow: 1; flex-direction: row; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Regular.ttf?fileID=12800000&amp;guid=5161dc664f658fe41bbf47ef5a68f909&amp;type=3#Roboto-Regular&quot;);">
         <ui:VisualElement name="left_player" style="flex-grow: 1; width: 50%; height: 100%; flex-direction: column;">
             <ui:VisualElement name="spedometer" style="width: 35%; height: 35%; align-self: center; bottom: -75%; position: relative; align-content: flex-start; align-items: center; right: auto;">
                 <ui:Image name="gauge" source="project://database/Assets/ui_assets/spedometer_background.png?fileID=2800000&amp;guid=10c75b1df15a5224f8e347b8ec8f7a80&amp;type=3#spedometer_background"/>
                 <ui:Image name="needle" source="project://database/Assets/ui_assets/needle.png?fileID=2800000&amp;guid=93821482123a39a4a884da05012cae1a&amp;type=3#needle" style="bottom: 50%; transform-origin: bottom; rotate: 0;"/>
-                <ui:Label text="##.#" name="speedometer_text" data-source="" data-source-type="UnityEditor.UIElements.Samples.FloatFieldSnippet+&lt;&gt;c__DisplayClass0_0, UnityEditor.UIElementsSamplesModule" style="position: absolute; bottom: 33%; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-Regular&quot;); font-size: 20%; -unity-font-style: bold; -unity-text-align: upper-center;"/>
+                <ui:Label text="##.#" name="speedometer_text" data-source="" data-source-type="UnityEditor.UIElements.Samples.FloatFieldSnippet+&lt;&gt;c__DisplayClass0_0, UnityEditor.UIElementsSamplesModule" style="position: absolute; bottom: 33%; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Regular.ttf?fileID=12800000&amp;guid=5161dc664f658fe41bbf47ef5a68f909&amp;type=3#Roboto-Regular&quot;); font-size: 20%; -unity-font-style: bold; -unity-text-align: upper-center;"/>
             </ui:VisualElement>
             <ui:VisualElement name="race_info" style="flex-grow: 1; position: absolute; left: 15%; bottom: 5%; top: 0;">
-                <ui:Label text="Lap: #/#" name="lap_count" style="font-size: 30px; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-BoldItalic&quot;);"/>
-                <ui:Label text="##:##:###" name="lap_time" style="font-size: 24px; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-Regular&quot;);"/>
+                <ui:Label text="Lap: #/#" name="lap_count" style="font-size: 30px; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Italic.ttf?fileID=12800000&amp;guid=c942fea56e07aa84fba801f75c4efc6e&amp;type=3#Roboto-Italic&quot;); -unity-font-style: normal;"/>
+                <ui:Label text="##:##:###" name="lap_time" style="font-size: 24px; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Regular.ttf?fileID=12800000&amp;guid=5161dc664f658fe41bbf47ef5a68f909&amp;type=3#Roboto-Regular&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="right_player" style="flex-grow: 1; width: 50%; height: 100%; flex-direction: column;">
             <ui:VisualElement name="spedometer" style="width: 35%; height: 35%; align-self: center; bottom: -75%; position: relative; align-content: flex-start; align-items: center; right: auto;">
                 <ui:Image name="gauge" source="project://database/Assets/ui_assets/spedometer_background.png?fileID=2800000&amp;guid=10c75b1df15a5224f8e347b8ec8f7a80&amp;type=3#spedometer_background"/>
                 <ui:Image name="needle" source="project://database/Assets/ui_assets/needle.png?fileID=2800000&amp;guid=93821482123a39a4a884da05012cae1a&amp;type=3#needle" style="bottom: 50%; transform-origin: bottom; rotate: 0;"/>
-                <ui:Label text="##.#" name="speedometer_text" data-source="" data-source-type="UnityEditor.UIElements.Samples.FloatFieldSnippet+&lt;&gt;c__DisplayClass0_0, UnityEditor.UIElementsSamplesModule" style="position: absolute; bottom: 33%; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-Regular&quot;); font-size: 20%; -unity-font-style: bold; -unity-text-align: upper-center;"/>
+                <ui:Label text="##.#" name="speedometer_text" data-source="" data-source-type="UnityEditor.UIElements.Samples.FloatFieldSnippet+&lt;&gt;c__DisplayClass0_0, UnityEditor.UIElementsSamplesModule" style="position: absolute; bottom: 33%; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Regular.ttf?fileID=12800000&amp;guid=5161dc664f658fe41bbf47ef5a68f909&amp;type=3#Roboto-Regular&quot;); font-size: 20%; -unity-font-style: bold; -unity-text-align: upper-center;"/>
             </ui:VisualElement>
             <ui:VisualElement name="race_info" style="flex-grow: 1; position: absolute; left: 15%; bottom: 5%; top: 0;">
-                <ui:Label text="Lap: #/#" name="lap_count" style="font-size: 30px; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-BoldItalic&quot;);"/>
-                <ui:Label text="##:##:###" name="lap_time" style="font-size: 24px; -unity-font-definition: resource(&quot;FlatSkin/Font/Roboto-Regular&quot;);"/>
+                <ui:Label text="Lap: #/#" name="lap_count" style="font-size: 30px; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Italic.ttf?fileID=12800000&amp;guid=c942fea56e07aa84fba801f75c4efc6e&amp;type=3#Roboto-Italic&quot;);"/>
+                <ui:Label text="##:##:###" name="lap_time" style="font-size: 24px; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Regular.ttf?fileID=12800000&amp;guid=5161dc664f658fe41bbf47ef5a68f909&amp;type=3#Roboto-Regular&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
