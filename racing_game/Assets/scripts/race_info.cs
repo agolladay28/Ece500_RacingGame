@@ -7,15 +7,16 @@ public class race_info : MonoBehaviour
 {
     public UIDocument document;
     //max speed is what is shown when needle is at max
-    public float total_laps = 3;
+    public float total_laps = 1;
     public float current_lap = 1;
+    public int last_checkpoint = 0;
     public float current_lap_time_sec = 59.988f;
     [SerializeField] private string player_visual_element_query = "left_player";
     Label lap_text;
     Label time_text;
     private System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
-    [SerializeField] private bool debug_lap_trigger = false;
-    private List<long> lap_times = new List<long>();
+    public bool lap_trigger = false;
+    public List<long> lap_times = new List<long>();
     private float final_time_sec = 0;
     void OnEnable()
     {
@@ -33,32 +34,18 @@ public class race_info : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (debug_lap_trigger)
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        current_lap_time_sec = stopwatch.ElapsedMilliseconds / 1000f;
+        lap_text.text = $"Lap: {current_lap}/{total_laps}";
+        time_text.text = time_to_string(current_lap_time_sec);
+        if (lap_trigger)
         {
             finish_lap();
-            debug_lap_trigger = false;
+            lap_trigger = false;
         }
-        if (current_lap != total_laps)
-        {
-            current_lap_time_sec = stopwatch.ElapsedMilliseconds / 1000f;
-            lap_text.text = $"Lap: {current_lap}/{total_laps}";
-            time_text.text = time_to_string(current_lap_time_sec);
-        }
-        if (current_lap == total_laps)
-        {
-            stopwatch.Stop();
-            finish_race();
-            time_text.text = time_to_string(final_time_sec);
-        }
-    }
-    private void finish_race()
-    {
-        final_time_sec = 0;
-        foreach (long curr in lap_times)
-        {
-            final_time_sec += curr;
-        }
-        return;
     }
     private void start_race()
     {
