@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class race_info : MonoBehaviour
 {
     public UIDocument document;
+    public string car_color;
     //max speed is what is shown when needle is at max
     private float total_laps = 1;
     public float current_lap = 1;

@@ -1,6 +1,7 @@
 using System;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class race_judge : MonoBehaviour
@@ -13,7 +14,6 @@ public class race_judge : MonoBehaviour
     public int checkpoints_per_lap;
     private bool is_winner_declared = false;
     private race_info winner_info;
-    private float winner_time = 0;
 
     public UIDocument winner_ui;
     private VisualElement doc_root;
@@ -30,7 +30,7 @@ public class race_judge : MonoBehaviour
         winner_time_label = winner_ui_root.Q<Label>("winner_time_text");
 
     }
-    void FixedUpdate()
+    void Update()
     {
         if (left_car_checkpoint != 0)
         {
@@ -46,9 +46,19 @@ public class race_judge : MonoBehaviour
         {
             Time.timeScale = 0;
             declare_winner();
+            if (Input.GetKey(KeyCode.R))
+            {
+                reset_scene();
+            }
         }
     }
-    void update_car(race_info info, int checkpoint_number)
+    private void reset_scene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+    private void update_car(race_info info, int checkpoint_number)
     {
         //do nothing if its the wrong checkpoint
         if (info.last_checkpoint + 1 != checkpoint_number)
@@ -69,21 +79,11 @@ public class race_judge : MonoBehaviour
         }
 
     }
-    void declare_winner()
+    private void declare_winner()
     {
         winner_time_label.text = "Time: " + winner_info.get_total_time_string();
-        if (winner_info = left_car_info)
-        {
-            winner_name_label.text = "Blue Won!";
-        }
-        if (winner_info = right_car_info)
-        {
-            winner_name_label.text = "Yellow Won!";
-        }
-
+        winner_name_label.text = winner_info.car_color + " Won!";
         doc_root.style.display = DisplayStyle.Flex;
-        //wait until reset key pressed
-        while (!Input.GetKey(KeyCode.R)) ;
     }
 
 }
