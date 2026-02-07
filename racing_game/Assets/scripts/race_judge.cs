@@ -1,5 +1,7 @@
 using System;
+using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class race_judge : MonoBehaviour
 {
@@ -12,6 +14,22 @@ public class race_judge : MonoBehaviour
     private bool is_winner_declared = false;
     private race_info winner_info;
     private float winner_time = 0;
+
+    public UIDocument winner_ui;
+    private VisualElement doc_root;
+    private Label winner_name_label;
+    private Label winner_time_label;
+
+
+    void OnEnable()
+    {
+        doc_root = winner_ui.rootVisualElement;
+        doc_root.style.display = DisplayStyle.None;
+        var winner_ui_root = doc_root.Q<VisualElement>("winner_root_div");
+        winner_name_label = winner_ui_root.Q<Label>("winner_name_text");
+        winner_time_label = winner_ui_root.Q<Label>("winner_time_text");
+
+    }
     void FixedUpdate()
     {
         if (left_car_checkpoint != 0)
@@ -26,16 +44,8 @@ public class race_judge : MonoBehaviour
         }
         if (is_winner_declared)
         {
-            if (winner_info == left_car_info)
-            {
-                Debug.Log($"left car won.{winner_time}.2f");
-                Time.timeScale = 0;
-            }
-            if (winner_info == right_car_info)
-            {
-                Debug.Log($"right car won.{winner_time}.2f");
-                Time.timeScale = 0;
-            }
+            Time.timeScale = 0;
+            declare_winner();
         }
     }
     void update_car(race_info info, int checkpoint_number)
@@ -56,12 +66,24 @@ public class race_judge : MonoBehaviour
         {
             winner_info = info;
             is_winner_declared = true;
-            foreach (long time in info.lap_times)
-            {
-                winner_time += (float)time / 1000.0f;
-            }
         }
 
+    }
+    void declare_winner()
+    {
+        winner_time_label.text = "Time: " + winner_info.get_total_time_string();
+        if (winner_info = left_car_info)
+        {
+            winner_name_label.text = "Blue Won!";
+        }
+        if (winner_info = right_car_info)
+        {
+            winner_name_label.text = "Yellow Won!";
+        }
+
+        doc_root.style.display = DisplayStyle.Flex;
+        //wait until reset key pressed
+        while (!Input.GetKey(KeyCode.R)) ;
     }
 
 }

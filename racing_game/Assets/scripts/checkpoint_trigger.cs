@@ -11,7 +11,6 @@ public class checkpoint_trigger : MonoBehaviour
         {
             if (other.name == "left_car_body")
             {
-                Debug.Log("Left car " + gameObject.name);
                 race_judge.left_car_checkpoint = checkpoint_number;
             }
             if (other.name == "right_car_body")

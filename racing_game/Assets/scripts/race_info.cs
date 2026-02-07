@@ -60,6 +60,15 @@ public class race_info : MonoBehaviour
         stopwatch.Restart();
 
     }
+    public string get_total_time_string()
+    {
+        float total = 0;
+        foreach (long time in lap_times)
+        {
+            total += time / 1000.0f;
+        }
+        return time_to_string(total);
+    }
     private string time_to_string(float time_seconds)
     {
         TimeSpan time = TimeSpan.FromSeconds(time_seconds);
