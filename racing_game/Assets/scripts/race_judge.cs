@@ -43,6 +43,7 @@ public class race_judge : MonoBehaviour
         //do nothing if its the wrong checkpoint
         if (info.last_checkpoint + 1 != checkpoint_number)
         {
+            Debug.Log($"Wanted: {info.last_checkpoint + 1}, Got: {checkpoint_number}");
             return;
         }
         info.last_checkpoint = checkpoint_number;
@@ -51,7 +52,7 @@ public class race_judge : MonoBehaviour
             info.lap_trigger = true;
             info.last_checkpoint = 0;
         }
-        if (!is_winner_declared && info.current_lap == race_setup.total_laps)
+        if (!is_winner_declared && info.current_lap == race_setup.total_laps + 1)
         {
             winner_info = info;
             is_winner_declared = true;
