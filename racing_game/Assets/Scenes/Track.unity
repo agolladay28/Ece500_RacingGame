@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c126880f9b4a1164bbafb13c2eed9fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_setup
-  total_laps: 1
+  total_laps: 3
 --- !u!4 &2110539328
 Transform:
   m_ObjectHideFlags: 0
