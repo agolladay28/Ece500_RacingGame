@@ -1551,13 +1551,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_info
   document: {fileID: 4542833155721343938}
+  total_laps: 3
   current_lap: 2
   last_checkpoint: 0
   current_lap_time_sec: 59.988
   player_visual_element_query: right_player
   lap_trigger: 0
   lap_times: 
-  race_setup: {fileID: 2110539327}
 --- !u!1001 &1462280042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1964,7 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c126880f9b4a1164bbafb13c2eed9fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_setup
-  total_laps: 1
+  total_laps: 3
 --- !u!4 &2110539328
 Transform:
   m_ObjectHideFlags: 0
@@ -10182,13 +10182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_info
   document: {fileID: 4542833155721343938}
+  total_laps: 3
   current_lap: 1
   last_checkpoint: 0
   current_lap_time_sec: 59.988
   player_visual_element_query: left_player
   lap_trigger: 0
   lap_times: 
-  race_setup: {fileID: 2110539327}
 --- !u!4 &7399541834471606297
 Transform:
   m_ObjectHideFlags: 0

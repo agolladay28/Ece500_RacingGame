@@ -7,7 +7,7 @@ public class race_info : MonoBehaviour
 {
     public UIDocument document;
     //max speed is what is shown when needle is at max
-    public float total_laps = 1;
+    private float total_laps = 1;
     public float current_lap = 1;
     public int last_checkpoint = 0;
     public float current_lap_time_sec = 59.988f;
@@ -17,7 +17,7 @@ public class race_info : MonoBehaviour
     private System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
     public bool lap_trigger = false;
     public List<long> lap_times = new List<long>();
-    private float final_time_sec = 0;
+    public race_setup race_setup;
     void OnEnable()
     {
 
@@ -25,6 +25,7 @@ public class race_info : MonoBehaviour
         var player_root = doc_root.Q<VisualElement>(player_visual_element_query);
         lap_text = player_root.Q<Label>("lap_count");
         time_text = player_root.Q<Label>("lap_time");
+        total_laps = race_setup.total_laps;
     }
     void Start()
     {
