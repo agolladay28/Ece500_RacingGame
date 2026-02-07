@@ -868,7 +868,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 3484513739419b542910726cee13d320, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: c5f656d0d44df924cbc95645ddcdc7d3, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Position: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -1536,8 +1536,6 @@ MonoBehaviour:
   document: {fileID: 4542833155721343938}
   player_visual_element_query: right_player
   body_to_measure: {fileID: 1672852453}
-  SPEED_SCALING: 6
-  current_speed: 50
 --- !u!114 &1461801595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,6 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_info
   document: {fileID: 4542833155721343938}
+  car_color: Yellow
   current_lap: 2
   last_checkpoint: 0
   current_lap_time_sec: 59.988
@@ -10167,8 +10166,6 @@ MonoBehaviour:
   document: {fileID: 4542833155721343938}
   player_visual_element_query: left_player
   body_to_measure: {fileID: 1824412453}
-  SPEED_SCALING: 6
-  current_speed: 50
 --- !u!114 &7373083506620024674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10182,6 +10179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_info
   document: {fileID: 4542833155721343938}
+  car_color: Blue
   current_lap: 1
   last_checkpoint: 0
   current_lap_time_sec: 59.988

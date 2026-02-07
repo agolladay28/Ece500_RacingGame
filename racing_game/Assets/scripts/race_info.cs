@@ -41,7 +41,9 @@ public class race_info : MonoBehaviour
             return;
         }
         current_lap_time_sec = stopwatch.ElapsedMilliseconds / 1000f;
-        lap_text.text = $"Lap: {current_lap}/{total_laps}";
+        //TODO: current_lap increments past one when winning race
+        var disp_laps = (current_lap > total_laps) ? total_laps : current_lap;
+        lap_text.text = $"Lap: {disp_laps}/{total_laps}";
         time_text.text = time_to_string(current_lap_time_sec);
         if (lap_trigger)
         {
