@@ -868,7 +868,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 3484513739419b542910726cee13d320, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: c5f656d0d44df924cbc95645ddcdc7d3, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Position: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -1536,6 +1536,8 @@ MonoBehaviour:
   document: {fileID: 4542833155721343938}
   player_visual_element_query: right_player
   body_to_measure: {fileID: 1672852453}
+  SPEED_SCALING: 6
+  current_speed: 50
 --- !u!114 &1461801595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,14 +1551,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_info
   document: {fileID: 4542833155721343938}
-  car_color: Yellow
+  total_laps: 3
   current_lap: 2
   last_checkpoint: 0
   current_lap_time_sec: 59.988
   player_visual_element_query: right_player
   lap_trigger: 0
   lap_times: 
-  race_setup: {fileID: 2110539327}
 --- !u!1001 &1462280042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1963,7 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c126880f9b4a1164bbafb13c2eed9fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_setup
-  total_laps: 1
+  total_laps: 3
 --- !u!4 &2110539328
 Transform:
   m_ObjectHideFlags: 0
@@ -10166,6 +10167,8 @@ MonoBehaviour:
   document: {fileID: 4542833155721343938}
   player_visual_element_query: left_player
   body_to_measure: {fileID: 1824412453}
+  SPEED_SCALING: 6
+  current_speed: 50
 --- !u!114 &7373083506620024674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10179,14 +10182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_info
   document: {fileID: 4542833155721343938}
-  car_color: Blue
+  total_laps: 3
   current_lap: 1
   last_checkpoint: 0
   current_lap_time_sec: 59.988
   player_visual_element_query: left_player
   lap_trigger: 0
   lap_times: 
-  race_setup: {fileID: 2110539327}
 --- !u!4 &7399541834471606297
 Transform:
   m_ObjectHideFlags: 0

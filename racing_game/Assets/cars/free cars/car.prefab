@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7146372929305712080}
   - component: {fileID: 1237103673145826843}
   m_Layer: 0
-  m_Name: Body
+  m_Name: car_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,8 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  he: 0
-  he2: 0
   forward_key: 0
   reverse_key: 0
   left_key: 0
