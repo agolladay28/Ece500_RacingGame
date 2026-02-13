@@ -10,6 +10,14 @@ public class race_judge : MonoBehaviour
     public int left_car_checkpoint = 0;
     public int right_car_checkpoint = 0;
     public int checkpoints_per_lap;
+    public AudioSource left_car_engine;
+    public AudioSource left_car_tire;
+    public AudioSource right_car_engine;
+    public AudioSource right_car_tire;
+    public AudioSource announcer;
+    public AudioClip left_wins;
+    public AudioClip right_wins;
+    private bool winner_announced = false;
     private bool is_winner_declared = false;
     private race_info winner_info;
 
@@ -79,9 +87,34 @@ public class race_judge : MonoBehaviour
     }
     private void declare_winner()
     {
+        mute_car_audio();
         winner_time_label.text = "Time: " + winner_info.get_total_time_string();
         winner_name_label.text = winner_info.car_color + " Won!";
         doc_root.style.display = DisplayStyle.Flex;
+        announce_winner();
+    }
+    private void announce_winner()
+    {
+        if (winner_announced)
+        {
+            return;
+        }
+        if (winner_info.car_color == "Yellow")
+        {
+            announcer.PlayOneShot(right_wins, 1.2f);
+        }
+        else
+        {
+            announcer.PlayOneShot(left_wins, 1.2f);
+        }
+        winner_announced = true;
+    }
+    private void mute_car_audio()
+    {
+        left_car_engine.Stop();
+        left_car_tire.Stop();
+        right_car_engine.Stop();
+        right_car_tire.Stop();
     }
 
 }
