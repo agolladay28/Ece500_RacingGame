@@ -13,9 +13,11 @@ public class audio_manager : MonoBehaviour
 
     private const string car_volume_pref_str = "car_volume";
 
-    void Start()
+    void OnEnable()
     {
+        car_audio_stop();
         update_car_volume(get_car_volume());
+        car_audio_play();
     }
     public float get_car_volume()
     {
