@@ -2539,6 +2539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::race_judge
   left_car_info: {fileID: 7373083506620024674}
   right_car_info: {fileID: 1461801595}
+  left_car_controller: {fileID: 1523764890472602832}
+  right_car_controller: {fileID: 4117366541052186161}
   race_setup: {fileID: 2110539327}
   left_car_checkpoint: 0
   right_car_checkpoint: 0
