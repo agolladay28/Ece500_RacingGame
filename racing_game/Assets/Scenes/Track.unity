@@ -2478,6 +2478,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3accc54eafe0a4c8fbd42c3b715148, type: 3}
+--- !u!1 &2095995603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095995605}
+  - component: {fileID: 2095995604}
+  m_Layer: 0
+  m_Name: user_prefrences
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2095995604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095995603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb556750c2872664b8eea85c41a90038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &2095995605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095995603}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.79378, y: -4.51649, z: 25.43685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110539325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2607,7 @@ MonoBehaviour:
   audio_manager: {fileID: 2110539331}
   left_car_controller: {fileID: 1523764890472602832}
   right_car_controller: {fileID: 4117366541052186161}
+  user_prefs: {fileID: 2095995604}
 --- !u!114 &2110539331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12946,3 +12991,4 @@ SceneRoots:
   - {fileID: 2110539328}
   - {fileID: 5562631530085866437}
   - {fileID: 803131195}
+  - {fileID: 2095995605}

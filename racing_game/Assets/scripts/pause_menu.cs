@@ -10,6 +10,7 @@ public class pause_menu : MonoBehaviour
     public audio_manager audio_manager;
     public PrometeoCarController left_car_controller;
     public PrometeoCarController right_car_controller;
+    public user_prefs user_prefs;
 
     private VisualElement pause_doc_root;
     private Slider engine_vol_slider;
@@ -21,9 +22,14 @@ public class pause_menu : MonoBehaviour
         engine_vol_slider = pause_doc_root.Q<Slider>("engine_vol_slider");
 
         var restart_button = pause_doc_root.Q<Button>("restart_race_button");
-        var main_menu_button = pause_doc_root.Q<Button>("main_menu_button");
         restart_button.clicked += restart_race;
+
+        var main_menu_button = pause_doc_root.Q<Button>("main_menu_button");
         main_menu_button.clicked += return_to_main_menu;
+
+
+        var toggle_fullscreen_button = pause_doc_root.Q<Button>("toggle_fullscreen_button");
+        toggle_fullscreen_button.clicked += user_prefs.toggle_fullscreen;
 
         engine_vol_slider.value = audio_manager.get_car_volume();
         engine_vol_slider.lowValue = 0;
