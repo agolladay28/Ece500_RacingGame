@@ -31,10 +31,17 @@ public class pause_menu : MonoBehaviour
         var toggle_fullscreen_button = pause_doc_root.Q<Button>("toggle_fullscreen_button");
         toggle_fullscreen_button.clicked += user_prefs.toggle_fullscreen;
 
+        var quit_button = pause_doc_root.Q<Button>("quit_button");
+        quit_button.clicked += quit_game;
+
         engine_vol_slider.value = audio_manager.get_car_volume();
         engine_vol_slider.lowValue = 0;
         engine_vol_slider.highValue = 1;
         engine_vol_slider.RegisterValueChangedCallback(on_engine_vol_changed);
+    }
+    private void quit_game()
+    {
+        Application.Quit();
     }
     public void request_pause()
     {
