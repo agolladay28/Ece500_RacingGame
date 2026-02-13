@@ -26,6 +26,9 @@ public class race_judge : MonoBehaviour
 
     public UIDocument pause_ui;
     private VisualElement pause_doc_root;
+    private Slider engine_vol_slider;
+    private float car_volume = 0.5f;
+
 
     public UIDocument winner_ui;
     private VisualElement winner_doc_root;
@@ -37,6 +40,16 @@ public class race_judge : MonoBehaviour
     {
         pause_doc_root = pause_ui.rootVisualElement;
         pause_doc_root.style.display = DisplayStyle.None;
+        engine_vol_slider = pause_doc_root.Q<Slider>("engine_vol_slider");
+        var restart_button = pause_doc_root.Q<Button>("restart_race_button");
+        var main_menu_button = pause_doc_root.Q<Button>("main_menu_button");
+        restart_button.clicked += restart_race;
+        main_menu_button.clicked += return_to_main_menu;
+
+        engine_vol_slider.value = car_volume;
+        engine_vol_slider.lowValue = 0;
+        engine_vol_slider.highValue = 1;
+        engine_vol_slider.RegisterValueChangedCallback(on_engine_vol_changed);
 
         winner_doc_root = winner_ui.rootVisualElement;
         winner_doc_root.style.display = DisplayStyle.None;
@@ -44,6 +57,10 @@ public class race_judge : MonoBehaviour
         winner_name_label = winner_ui_root.Q<Label>("winner_name_text");
         winner_time_label = winner_ui_root.Q<Label>("winner_time_text");
 
+    }
+    void Start()
+    {
+        update_car_volume();
     }
     void Update()
     {
@@ -63,7 +80,7 @@ public class race_judge : MonoBehaviour
             declare_winner();
             if (Input.GetKey(KeyCode.Return))
             {
-                return_to_main_menu();
+                restart_race();
             }
             return;
         }
@@ -97,6 +114,12 @@ public class race_judge : MonoBehaviour
         mute_car_audio();
         Time.timeScale = 0;
         pause_doc_root.style.display = DisplayStyle.Flex;
+    }
+    private void restart_race()
+    {
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Track");
     }
     private void return_to_main_menu()
     {
@@ -164,5 +187,14 @@ public class race_judge : MonoBehaviour
         right_car_engine.Stop();
         right_car_tire.Stop();
     }
-
+    private void update_car_volume()
+    {
+        left_car_engine.volume = car_volume;
+        right_car_engine.volume = car_volume;
+    }
+    private void on_engine_vol_changed(ChangeEvent<float> evt)
+    {
+        car_volume = evt.newValue;
+        update_car_volume();
+    }
 }
