@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -10,23 +11,34 @@ public class race_judge : MonoBehaviour
     public int left_car_checkpoint = 0;
     public int right_car_checkpoint = 0;
     public int checkpoints_per_lap;
+    public pause_menu pause_menu;
+    public audio_manager audio_manager;
+
+
+    private bool winner_announced = false;
     private bool is_winner_declared = false;
     private race_info winner_info;
 
+
     public UIDocument winner_ui;
-    private VisualElement doc_root;
+    private VisualElement winner_doc_root;
     private Label winner_name_label;
     private Label winner_time_label;
 
 
     void OnEnable()
     {
-        doc_root = winner_ui.rootVisualElement;
-        doc_root.style.display = DisplayStyle.None;
-        var winner_ui_root = doc_root.Q<VisualElement>("winner_root_div");
+
+
+        winner_doc_root = winner_ui.rootVisualElement;
+        winner_doc_root.style.display = DisplayStyle.None;
+        var winner_ui_root = winner_doc_root.Q<VisualElement>("winner_root_div");
         winner_name_label = winner_ui_root.Q<Label>("winner_name_text");
         winner_time_label = winner_ui_root.Q<Label>("winner_time_text");
 
+    }
+    void Start()
+    {
     }
     void Update()
     {
@@ -46,14 +58,14 @@ public class race_judge : MonoBehaviour
             declare_winner();
             if (Input.GetKey(KeyCode.Return))
             {
-                return_to_main_menu();
+                pause_menu.restart_race();
             }
+            return;
         }
-    }
-    private void return_to_main_menu()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Start Page");
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause_menu.request_pause();
+        }
 
     }
     private void update_car(race_info info, int checkpoint_number)
@@ -79,9 +91,15 @@ public class race_judge : MonoBehaviour
     }
     private void declare_winner()
     {
+        if (winner_announced)
+        {
+            return;
+        }
+        pause_menu.pause_cars();
         winner_time_label.text = "Time: " + winner_info.get_total_time_string();
         winner_name_label.text = winner_info.car_color + " Won!";
-        doc_root.style.display = DisplayStyle.Flex;
+        winner_doc_root.style.display = DisplayStyle.Flex;
+        audio_manager.announce_winner(winner_info.car_color);
+        winner_announced = true;
     }
-
 }

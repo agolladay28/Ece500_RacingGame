@@ -19,6 +19,9 @@ public class MainMenuUI : MonoBehaviour
 
             else if (current == "Control")
                 SceneManager.LoadScene("Track");
+
+            else if (current == "Track Selection")
+                SceneManager.LoadScene("Track");
         }
     }
 }
