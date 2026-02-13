@@ -2490,6 +2490,7 @@ GameObject:
   - component: {fileID: 2110539327}
   - component: {fileID: 2110539329}
   - component: {fileID: 2110539330}
+  - component: {fileID: 2110539331}
   m_Layer: 0
   m_Name: race_judge
   m_TagString: Untagged
@@ -2509,7 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c126880f9b4a1164bbafb13c2eed9fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::race_setup
-  total_laps: 3
+  total_laps: 1
 --- !u!4 &2110539328
 Transform:
   m_ObjectHideFlags: 0
@@ -2539,20 +2540,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::race_judge
   left_car_info: {fileID: 7373083506620024674}
   right_car_info: {fileID: 1461801595}
-  left_car_controller: {fileID: 1523764890472602832}
-  right_car_controller: {fileID: 4117366541052186161}
   race_setup: {fileID: 2110539327}
   left_car_checkpoint: 0
   right_car_checkpoint: 0
   checkpoints_per_lap: 6
-  left_car_engine: {fileID: 1902120704}
-  left_car_tire: {fileID: 1638906341}
-  right_car_engine: {fileID: 3082853320123866874}
-  right_car_tire: {fileID: 3125092955241394625}
-  announcer: {fileID: 1304044336}
-  left_wins: {fileID: 8300000, guid: ded11bc58e47b8a4491e670362388398, type: 3}
-  right_wins: {fileID: 8300000, guid: ece2f3244cbba7b4f8dfba4f62d9d446, type: 3}
-  pause_ui: {fileID: 2041888235}
+  pause_menu: {fileID: 2110539330}
+  audio_manager: {fileID: 2110539331}
   winner_ui: {fileID: 485772544}
 --- !u!114 &2110539330
 MonoBehaviour:
@@ -2566,6 +2559,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0024fecd374114094fd34cc1cae95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  pause_ui: {fileID: 2041888235}
+  audio_manager: {fileID: 2110539331}
+  left_car_controller: {fileID: 1523764890472602832}
+  right_car_controller: {fileID: 4117366541052186161}
+--- !u!114 &2110539331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110539325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c81bd5cefedf264d85a7a1ed87f6ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  left_car_engine: {fileID: 1902120704}
+  left_car_tire: {fileID: 1638906341}
+  right_car_engine: {fileID: 3082853320123866874}
+  right_car_tire: {fileID: 3125092955241394625}
+  announcer: {fileID: 1304044336}
+  left_wins: {fileID: 8300000, guid: ded11bc58e47b8a4491e670362388398, type: 3}
+  right_wins: {fileID: 8300000, guid: ece2f3244cbba7b4f8dfba4f62d9d446, type: 3}
 --- !u!4 &2137228760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1dbf28c1bb322474d981b2dc555e28b0, type: 3}
