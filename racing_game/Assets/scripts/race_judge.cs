@@ -7,6 +7,8 @@ public class race_judge : MonoBehaviour
 {
     public race_info left_car_info;
     public race_info right_car_info;
+    public PrometeoCarController left_car_controller;
+    public PrometeoCarController right_car_controller;
     public race_setup race_setup;
     public int left_car_checkpoint = 0;
     public int right_car_checkpoint = 0;
@@ -103,7 +105,7 @@ public class race_judge : MonoBehaviour
     }
     private void resume()
     {
-        resume_car_audio();
+        resume_cars();
         is_paused = false;
         Time.timeScale = 1;
         pause_doc_root.style.display = DisplayStyle.None;
@@ -111,7 +113,7 @@ public class race_judge : MonoBehaviour
     private void pause()
     {
         is_paused = true;
-        mute_car_audio();
+        pause_cars();
         Time.timeScale = 0;
         pause_doc_root.style.display = DisplayStyle.Flex;
     }
@@ -150,7 +152,7 @@ public class race_judge : MonoBehaviour
     }
     private void declare_winner()
     {
-        mute_car_audio();
+        pause_cars();
         winner_time_label.text = "Time: " + winner_info.get_total_time_string();
         winner_name_label.text = winner_info.car_color + " Won!";
         winner_doc_root.style.display = DisplayStyle.Flex;
@@ -172,16 +174,17 @@ public class race_judge : MonoBehaviour
         }
         winner_announced = true;
     }
-    private void resume_car_audio()
+    private void resume_cars()
     {
-
+        left_car_controller.enabled = true;
         left_car_engine.Play();
         left_car_tire.Play();
         right_car_engine.Play();
         right_car_tire.Play();
     }
-    private void mute_car_audio()
+    private void pause_cars()
     {
+        left_car_controller.enabled = false;
         left_car_engine.Stop();
         left_car_tire.Stop();
         right_car_engine.Stop();
