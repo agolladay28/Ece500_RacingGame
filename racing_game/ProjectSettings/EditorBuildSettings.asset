@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Page.unity
     guid: dd8608d3dac261540913e7af9c7f3be8
   - enabled: 1
+    path: Assets/Scenes/Track Selection.unity
+    guid: 92b0b3baa852c63428ea617b7c21da41
+  - enabled: 1
     path: Assets/Scenes/Control.unity
     guid: f1c09354e51e7e249b60112df48e81d6
   - enabled: 1
