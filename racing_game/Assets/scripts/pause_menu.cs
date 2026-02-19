@@ -71,7 +71,8 @@ public class pause_menu : MonoBehaviour
     public void restart_race()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Track");
+        Scene curr_scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(curr_scene.buildIndex);
     }
     public void return_to_main_menu()
     {
