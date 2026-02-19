@@ -7,14 +7,14 @@ public class speedometer : MonoBehaviour
     public UIDocument document;
     public VisualElement spedometer_root;
     //max speed is what is shown when needle is at max
-    const float max_speed = 120;
+    const float max_speed = 190;
 
     private float max_angle = 89;
     private float min_angle = -89;
 
     [SerializeField] private string player_visual_element_query = "left_player";
     public Rigidbody body_to_measure;
-    private float SPEED_SCALING = 6;
+    private float SPEED_SCALING = 2;
     [Range(0, max_speed)] private float current_speed = 50;
     VisualElement needle;
     Label speed_text;

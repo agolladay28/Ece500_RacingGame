@@ -141,7 +141,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.57261, y: 3.77638, z: 8.79704}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 345454333811061712}
@@ -193,14 +193,14 @@ MonoBehaviour:
   left_key: 0
   right_key: 0
   handbrake_key: 0
-  maxSpeed: 120
+  maxSpeed: 190
   maxReverseSpeed: 45
-  accelerationMultiplier: 5
+  accelerationMultiplier: 10
   maxSteeringAngle: 45
-  steeringSpeed: 0.5
-  brakeForce: 450
+  steeringSpeed: 0.35
+  brakeForce: 501
   decelerationMultiplier: 1
-  handbrakeDriftMultiplier: 5
+  handbrakeDriftMultiplier: 3
   bodyMassCenter: {x: 0, y: 0, z: 0}
   frontLeftMesh: {fileID: 3973273537543566935}
   frontLeftCollider: {fileID: 4986592311030458370}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8388204217224749136}
   - component: {fileID: 4986592311030458370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FrontLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,16 +533,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.8
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 4
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 3
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
@@ -1082,7 +1082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818773861295526581}
   - component: {fileID: 1048304127104447925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RearRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1123,17 +1123,17 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 4
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 1.5
+    m_Stiffness: 3
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5986,7 +5986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689966352793745317}
   - component: {fileID: 3056387289644401773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FrontRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6027,16 +6027,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.8
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 4
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 5
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 5
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
@@ -11032,7 +11032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3132027790858464961}
   - component: {fileID: 2802694884041961602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RearLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11073,16 +11073,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 4
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 1.5
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
