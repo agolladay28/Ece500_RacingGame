@@ -11,6 +11,10 @@ public class audio_manager : MonoBehaviour
     public AudioClip left_wins;
     public AudioClip right_wins;
 
+    public AudioClip countdown_beep_sound;
+    public AudioClip go_beep_sound;
+    public float beep_volume = 1;
+
     private const string car_volume_pref_str = "car_volume";
 
     void OnEnable()
@@ -66,5 +70,13 @@ public class audio_manager : MonoBehaviour
         {
             announcer.PlayOneShot(left_wins, 1.2f);
         }
+    }
+    public void countdown_beep()
+    {
+        announcer.PlayOneShot(countdown_beep_sound, beep_volume);
+    }
+    public void go_beep()
+    {
+        announcer.PlayOneShot(go_beep_sound, beep_volume);
     }
 }

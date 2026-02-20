@@ -81,4 +81,8 @@ public class race_info : MonoBehaviour
         return timeStr;
 
     }
+    public void reset_time()
+    {
+        stopwatch.Restart();
+    }
 }

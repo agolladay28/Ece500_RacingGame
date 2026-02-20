@@ -3447,6 +3447,7 @@ MonoBehaviour:
   pause_menu: {fileID: 2110539330}
   audio_manager: {fileID: 2110539331}
   winner_ui: {fileID: 485772544}
+  HUD_ui: {fileID: 4542833155721343938}
 --- !u!114 &2110539330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3483,6 +3484,9 @@ MonoBehaviour:
   announcer: {fileID: 1304044336}
   left_wins: {fileID: 8300000, guid: ded11bc58e47b8a4491e670362388398, type: 3}
   right_wins: {fileID: 8300000, guid: ece2f3244cbba7b4f8dfba4f62d9d446, type: 3}
+  countdown_beep_sound: {fileID: 8300000, guid: c7dd08289d81ea0459f7ab80052dfaf0, type: 3}
+  go_beep_sound: {fileID: 8300000, guid: 5137dfb6d95dd56488dc31be1471f652, type: 3}
+  beep_volume: 1
 --- !u!4 &2130819985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1814833073459337288, guid: b759ccc889f488d49a7b0044566f6c0d, type: 3}

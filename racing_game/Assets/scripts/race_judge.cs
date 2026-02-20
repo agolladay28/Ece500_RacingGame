@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,15 @@ public class race_judge : MonoBehaviour
     private Label winner_name_label;
     private Label winner_time_label;
 
+    public UIDocument HUD_ui;
+    private VisualElement start_lights;
+    private VisualElement light1;
+    private VisualElement light2;
+    private VisualElement light3;
+    private bool is_counting_down = true;
+    private float countdown_time = 0;
+    bool countdown_flag1, countdown_flag2, coundown_flag3, countdown_flag4;
+
 
     void OnEnable()
     {
@@ -36,12 +46,25 @@ public class race_judge : MonoBehaviour
         winner_name_label = winner_ui_root.Q<Label>("winner_name_text");
         winner_time_label = winner_ui_root.Q<Label>("winner_time_text");
 
+        var HUD_root = HUD_ui.rootVisualElement;
+        var HUD_root_div = HUD_root.Q<VisualElement>("root");
+        start_lights = HUD_root_div.Q<VisualElement>("start_lights");
+        light1 = start_lights.Q<VisualElement>("light1");
+        light2 = start_lights.Q<VisualElement>("light2");
+        light3 = start_lights.Q<VisualElement>("light3");
+
     }
-    void Start()
+    void Awake()
     {
+        countdown_flag1 = countdown_flag2 = coundown_flag3 = countdown_flag4 = true;
     }
     void Update()
     {
+        if (is_counting_down)
+        {
+            countdown();
+            return;
+        }
         if (left_car_checkpoint != 0)
         {
             update_car(left_car_info, left_car_checkpoint);
@@ -101,5 +124,65 @@ public class race_judge : MonoBehaviour
         winner_doc_root.style.display = DisplayStyle.Flex;
         audio_manager.announce_winner(winner_info.car_color);
         winner_announced = true;
+    }
+    private void countdown()
+    {
+
+        countdown_time += Math.Min(Time.unscaledDeltaTime, 0.1f);
+        if (countdown_time < 4)
+        {
+            //disable the cars until after the 3-2-1 start countdown
+            Time.timeScale = 0;
+            pause_menu.pause_cars();
+            left_car_info.reset_time();
+            right_car_info.reset_time();
+        }
+        if (countdown_time >= 1 && countdown_flag1)
+        {
+            make_light_red(light1);
+            audio_manager.countdown_beep();
+            countdown_flag1 = false;
+        }
+        if (countdown_time >= 2 && countdown_flag2)
+        {
+            make_light_red(light2);
+            audio_manager.countdown_beep();
+            countdown_flag2 = false;
+        }
+        if (countdown_time >= 3 && coundown_flag3)
+        {
+            make_light_red(light3);
+            audio_manager.countdown_beep();
+            coundown_flag3 = false;
+        }
+        if (countdown_time >= 4 && countdown_flag4)
+        {
+            make_light_green(light1);
+            make_light_green(light2);
+            make_light_green(light3);
+            audio_manager.go_beep();
+
+            pause_menu.resume_cars();
+            Time.timeScale = 1;
+
+            countdown_flag4 = false;
+        }
+        if (countdown_time >= 5)
+        {
+            start_lights.style.display = DisplayStyle.None;
+            is_counting_down = false;//ensures countdown() not called again
+
+        }
+
+    }
+    private void make_light_green(VisualElement light)
+    {
+        var img = light as Image;
+        img.tintColor = Color.green;
+    }
+    private void make_light_red(VisualElement light)
+    {
+        var img = light as Image;
+        img.tintColor = Color.red;
     }
 }
