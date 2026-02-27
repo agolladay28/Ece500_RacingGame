@@ -23,13 +23,12 @@ public class MainMenuUI : MonoBehaviour
                 SceneManager.LoadScene("oval_track");
 
             else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-                SceneManager.LoadScene("oval_track1");
-
+                SceneManager.LoadScene("oval_track 1");
             else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-                SceneManager.LoadScene("oval_track2");
+                SceneManager.LoadScene("oval_track");
 
             else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
-                SceneManager.LoadScene("oval_track3");
+                SceneManager.LoadScene("oval_track 1");
         }
     }
 }
