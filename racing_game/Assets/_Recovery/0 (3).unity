@@ -1859,7 +1859,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c094036250b46164b807269f1fa81d7d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SteeringWheel
+  m_EditorClassIdentifier: '::'
   angle: 0
   grabbable: {fileID: 744187744}
 --- !u!1001 &745296724

@@ -39,7 +39,11 @@ public class SteeringWheel : MonoBehaviour
         angle = transform.localEulerAngles.y;
         if (!grabbed)
         {
-            transform.localEulerAngles = starting_angle;
+            Vector3 tmp;
+            tmp.x = starting_angle.x;
+            tmp.z = starting_angle.z;
+
+            transform.localEulerAngles = tmp;
         }
         //  Debug.Log("Relative Y Rotation: " + angle);
     }
