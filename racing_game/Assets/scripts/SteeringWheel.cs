@@ -3,6 +3,7 @@ using Unity.Mathematics;
 using Oculus.Interaction;
 public class SteeringWheel : MonoBehaviour
 {
+    private float steering_sensitivity = 0.7f;
     public float angle;
     private bool grabbed = false;
     private Vector3 starting_angle;
@@ -56,16 +57,15 @@ public class SteeringWheel : MonoBehaviour
     float steering_wheel_to_car()
     {
         float angle = transform.localEulerAngles.y;
-        angle = full_to_half_angle(angle);
-        Debug.Log("full-clamp " + angle);
+        angle = full_to_half_angle(angle) * steering_sensitivity;
         angle /= 180f;
-        Debug.Log("pre-clamp " + angle);
         return Mathf.Clamp(angle, -1f, 1f);
     }
     float car_to_steering_wheel()
     {
         float angle = controller.maxSteeringAngle * controller.steeringAxis;
         angle = half_to_full_angle(angle);
+        angle /= steering_sensitivity;
         angle = Mathf.Clamp(angle, 0, 360);
         return angle;
     }
@@ -78,7 +78,7 @@ public class SteeringWheel : MonoBehaviour
         }
         else
         {
-            return -1 * (angle - 180);
+            return angle - 360;
         }
     }
     //converts angle of range -180-180 to range of 0-360
