@@ -8,7 +8,7 @@ public class SteeringWheel : MonoBehaviour
     private bool grabbed = false;
     private Vector3 starting_angle;
     public Grabbable grabbable;
-    public PrometeoCarController controller;
+    public PrometeoCarControllerVR controller;
 
     void OnEnable()
     {
