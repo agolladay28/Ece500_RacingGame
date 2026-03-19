@@ -16,6 +16,8 @@ using UnityEngine.UI;
 
 public class PrometeoCarController : MonoBehaviour
 {
+  [SerializeField] private XRInput xrInput;
+  public bool help;
   public KeyCode forward_key, reverse_key, left_key, right_key, handbrake_key;
 
   //CAR SETUP
@@ -282,6 +284,10 @@ public class PrometeoCarController : MonoBehaviour
     }
 
   }
+  void Awake()
+  {
+    xrInput = FindFirstObjectByType<XRInput>();
+  }
 
   // Update is called once per frame
   void Update()
@@ -360,13 +366,13 @@ public class PrometeoCarController : MonoBehaviour
     else
     {
 
-      if (Input.GetKey(forward_key))
+      if (xrInput.forward)
       {
         CancelInvoke("DecelerateCar");
         deceleratingCar = false;
         GoForward();
       }
-      if (Input.GetKey(reverse_key))
+      if (xrInput.reverse)
       {
         CancelInvoke("DecelerateCar");
         deceleratingCar = false;
@@ -391,11 +397,11 @@ public class PrometeoCarController : MonoBehaviour
       {
         RecoverTraction();
       }
-      if ((!Input.GetKey(reverse_key) && !Input.GetKey(forward_key)))
+      if ((!xrInput.reverse && !xrInput.forward))
       {
         ThrottleOff();
       }
-      if ((!Input.GetKey(reverse_key) && !Input.GetKey(forward_key)) && !Input.GetKey(handbrake_key) && !deceleratingCar)
+      if ((!xrInput.reverse && !xrInput.forward && !Input.GetKey(handbrake_key) && !deceleratingCar))
       {
         InvokeRepeating("DecelerateCar", 0f, 0.1f);
         deceleratingCar = true;
