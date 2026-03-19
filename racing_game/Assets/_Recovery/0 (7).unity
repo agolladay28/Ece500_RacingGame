@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 408858625}
   - component: {fileID: 408858624}
   - component: {fileID: 408858629}
+  - component: {fileID: 408858630}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -949,6 +950,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::XRInput
   forward: 0
   reverse: 0
+--- !u!114 &408858630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408858623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a3ff5e31c46b04eb244c06e322c8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,7 +3397,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1461801592}
-  - component: {fileID: 1461801593}
   - component: {fileID: 1461801595}
   - component: {fileID: 1461801594}
   m_Layer: 0
@@ -3410,24 +3422,6 @@ Transform:
   - {fileID: 5440500942767145427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -91.83, z: 0}
---- !u!114 &1461801593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461801591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71685f2df174ddb48994f11f6e3ca258, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::player_keybinds
-  car_controller: {fileID: 0}
-  forward_key: 273
-  reverse_key: 274
-  left_key: 276
-  right_key: 275
-  handbrake_key: 32
 --- !u!114 &1461801594
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@
             <ui:Image source="project://database/Assets/ui_assets/circle-fill-svgrepo-com.svg?fileID=7388822144124034973&amp;guid=0dbfe8ff665b8a94f9f08466073e493f&amp;type=3#circle-fill-svgrepo-com" tint-color="rgb(153, 153, 153)" name="light2" style="width: auto; aspect-ratio: 1; height: 100%; margin-left: 2%; margin-right: 2%;"/>
             <ui:Image source="project://database/Assets/ui_assets/circle-fill-svgrepo-com.svg?fileID=7388822144124034973&amp;guid=0dbfe8ff665b8a94f9f08466073e493f&amp;type=3#circle-fill-svgrepo-com" tint-color="rgb(153, 153, 153)" name="light3" style="width: auto; aspect-ratio: 1; height: 100%; margin-left: 2%; margin-right: 2%;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="left_player" style="flex-grow: 1; width: 50%; height: 100%; flex-direction: column; -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(255, 250, 250);">
+        <ui:VisualElement name="left_player" enabled="true" style="flex-grow: 1; width: 50%; height: 100%; flex-direction: column; -unity-text-outline-width: 1px; -unity-text-outline-color: rgb(255, 250, 250); position: relative; visibility: visible;">
             <ui:VisualElement name="spedometer" style="width: auto; height: 35%; align-self: center; bottom: -75%; position: relative; align-content: flex-start; align-items: center; right: auto; min-width: auto;">
                 <ui:Image name="gauge" source="project://database/Assets/ui_assets/spedometer_background.png?fileID=2800000&amp;guid=10c75b1df15a5224f8e347b8ec8f7a80&amp;type=3#spedometer_background"/>
                 <ui:Image name="needle" source="project://database/Assets/ui_assets/needle.png?fileID=2800000&amp;guid=93821482123a39a4a884da05012cae1a&amp;type=3#needle" style="bottom: 50%; transform-origin: bottom; rotate: 0;"/>
@@ -16,7 +16,7 @@
                 <ui:Label text="##:##:###" name="lap_time" style="font-size: 24px; -unity-font-definition: url(&quot;project://database/Assets/ui_assets/fonts/Roboto-Regular.ttf?fileID=12800000&amp;guid=5161dc664f658fe41bbf47ef5a68f909&amp;type=3#Roboto-Regular&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="right_player" style="flex-grow: 1; width: 50%; height: 100%; flex-direction: column;">
+        <ui:VisualElement name="right_player" style="flex-grow: 1; width: 50%; height: 100%; flex-direction: column; position: absolute; visibility: hidden;">
             <ui:VisualElement name="spedometer" style="width: auto; height: 35%; align-self: center; bottom: -75%; position: relative; align-content: flex-start; align-items: center; right: auto; min-width: auto;">
                 <ui:Image name="gauge" source="project://database/Assets/ui_assets/spedometer_background.png?fileID=2800000&amp;guid=10c75b1df15a5224f8e347b8ec8f7a80&amp;type=3#spedometer_background"/>
                 <ui:Image name="needle" source="project://database/Assets/ui_assets/needle.png?fileID=2800000&amp;guid=93821482123a39a4a884da05012cae1a&amp;type=3#needle" style="bottom: 50%; transform-origin: bottom; rotate: 0;"/>

@@ -9,7 +9,7 @@ public class pause_menu : MonoBehaviour
     public UIDocument pause_ui;
     public audio_manager audio_manager;
     public PrometeoCarController left_car_controller;
-    public PrometeoCarController right_car_controller;
+    public PrometeoCarControllerVR right_car_controller;
     public user_prefs user_prefs;
 
     private VisualElement pause_doc_root;

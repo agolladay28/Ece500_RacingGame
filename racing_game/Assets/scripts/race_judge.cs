@@ -128,7 +128,7 @@ public class race_judge : MonoBehaviour
     private void countdown()
     {
 
-        countdown_time += Math.Min(Time.unscaledDeltaTime, 0.1f) * 100;
+        countdown_time += Math.Min(Time.unscaledDeltaTime, 0.1f);
         if (countdown_time < 4)
         {
             //disable the cars until after the 3-2-1 start countdown
