@@ -10,7 +10,7 @@ public class DisplayManager : MonoBehaviour
         // Display.displays[0] is always the primary monitor (where your VR rig/Main Game usually is)
         // Display.displays[1] is the second monitor (where your UI Toolkit HUD should be)
 
-        if (Display.displays.Length < 2)
+        if (Display.displays.Length > 1)
         {
             Debug.Log("Starting display 2");
             Display.displays[1].Activate();
