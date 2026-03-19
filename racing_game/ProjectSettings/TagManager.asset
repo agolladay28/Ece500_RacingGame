@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - steering_wheel
   - Water
   - UI
   - left_player_layer
