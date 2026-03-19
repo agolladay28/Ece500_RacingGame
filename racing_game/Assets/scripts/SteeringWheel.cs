@@ -19,8 +19,12 @@ public class SteeringWheel : MonoBehaviour
     {
         grabbable.WhenPointerEventRaised -= HandleEvent;
     }
+    private Quaternion lastParentRotation;
+
     void Start()
     {
+        if (transform.parent != null)
+            lastParentRotation = transform.parent.rotation;
         starting_angle = transform.localEulerAngles;
     }
     private void HandleEvent(PointerEvent evt)
@@ -42,7 +46,8 @@ public class SteeringWheel : MonoBehaviour
         angle = transform.localEulerAngles.y;
         if (grabbed)
         {
-            controller.steeringAxis = this.angle = steering_wheel_to_car();
+            controller.steeringAxis = steering_wheel_to_car();
+
         }
         else
         {
@@ -91,6 +96,17 @@ public class SteeringWheel : MonoBehaviour
         else
         {
             return (-1 * angle) + 180;
+        }
+    }
+    void LateUpdate()
+    {
+        if (grabbed && transform.parent != null)
+        {
+            Quaternion parentDelta = transform.parent.rotation * Quaternion.Inverse(lastParentRotation);
+            transform.rotation = parentDelta * transform.rotation;
+            Debug.Log("Correcting");
+
+            lastParentRotation = transform.parent.rotation;
         }
     }
 }
