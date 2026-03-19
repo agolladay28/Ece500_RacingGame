@@ -141,7 +141,7 @@ public class PrometeoCarController : MonoBehaviour
   IMPORTANT: The following variables should not be modified manually since their values are automatically given via script.
   */
   Rigidbody carRigidbody; // Stores the car's rigidbody.
-  float steeringAxis; // Used to know whether the steering wheel has reached the maximum value. It goes from -1 to 1.
+  public float steeringAxis; // Used to know whether the steering wheel has reached the maximum value. It goes from -1 to 1.
   float throttleAxis; // Used to know whether the throttle has reached the maximum value. It goes from -1 to 1.
   float driftingAxis;
   float localVelocityZ;
@@ -292,7 +292,7 @@ public class PrometeoCarController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-
+    updateSteering();
     //CAR DATA
 
     // We determine the speed of the car.
@@ -501,7 +501,13 @@ public class PrometeoCarController : MonoBehaviour
     frontLeftCollider.steerAngle = Mathf.Lerp(frontLeftCollider.steerAngle, steeringAngle, steeringSpeed);
     frontRightCollider.steerAngle = Mathf.Lerp(frontRightCollider.steerAngle, steeringAngle, steeringSpeed);
   }
-
+  public void updateSteering()
+  {
+    steeringAxis = Mathf.Clamp(steeringAxis, -1, 1);
+    var steeringAngle = steeringAxis * maxSteeringAngle;
+    frontLeftCollider.steerAngle = Mathf.Lerp(frontLeftCollider.steerAngle, steeringAngle, steeringSpeed);
+    frontRightCollider.steerAngle = Mathf.Lerp(frontRightCollider.steerAngle, steeringAngle, steeringSpeed);
+  }
   //The following method turns the front car wheels to the right. The speed of this movement will depend on the steeringSpeed variable.
   public void TurnRight()
   {

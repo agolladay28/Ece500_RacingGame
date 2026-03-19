@@ -1862,6 +1862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SteeringWheel
   angle: 0
   grabbable: {fileID: 744187744}
+  controller: {fileID: 4117366541052186161}
+  steering_sensitivity: 2
 --- !u!1001 &745296724
 PrefabInstance:
   m_ObjectHideFlags: 0
