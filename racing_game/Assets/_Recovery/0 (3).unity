@@ -1862,6 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   angle: 0
   grabbable: {fileID: 744187744}
+  controller: {fileID: 0}
 --- !u!1001 &745296724
 PrefabInstance:
   m_ObjectHideFlags: 0

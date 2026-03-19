@@ -42,14 +42,14 @@ public class SteeringWheel : MonoBehaviour
         angle = transform.localEulerAngles.y;
         if (grabbed)
         {
-            controller.steeringAxis = steering_wheel_to_car();
+            controller.steeringAxis = this.angle = steering_wheel_to_car();
         }
         else
         {
             Vector3 tmp = Vector3.zero;
             tmp.x = starting_angle.x;
             tmp.z = starting_angle.z;
-            tmp.y = car_to_steering_wheel();
+            tmp.y = this.angle = car_to_steering_wheel();
             transform.localEulerAngles = tmp;
         }
         //  Debug.Log("Relative Y Rotation: " + angle);
